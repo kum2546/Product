@@ -65,9 +65,22 @@ const ProductPage = () => {
     }
   };
 
-  const deleteProduct = (id) => {
-    setProducts((prevProducts) => prevProducts.filter((_, i) => i !== id));
-    toast.error("Product deleted successfully!", { autoClose: 2000 });
+  const deleteProduct = async (id) => {
+    try {
+      const { pro_id } = products[id];
+      await fetch(
+        `https://66bed4f942533c4031442a3e.mockapi.io/products/${pro_id}`,
+        {
+          method: "DELETE",
+        }
+      );
+      setProducts((prevProducts) =>
+        prevProducts.filter((_, index) => index !== id)
+      );
+      toast.error("Product deleted successfully!", { autoClose: 2000 });
+    } catch (error) {
+      toast.error("Failed to delete product!", { autoClose: 2000 });
+    }
   };
 
   const handleSearchChange = (e) => {
