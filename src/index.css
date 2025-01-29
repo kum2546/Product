@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  @apply flex flex-col min-h-screen;
+}
+header {
+  @apply flex px-4 md:px-6 py-6 
+  bg-blue-500 text-white items-center;
+}
+body {
+  @apply bg-gray-100 antialiased;
+}
+main {
+  @apply flex flex-col flex-1 justify-center place-items-center;
+}
+footer {
+  @apply px-4 md:px-6 py-3 bg-slate-600 text-white;
+}
+
+.todo-btn {
+  @apply p-1 bg-gray-100 rounded-sm text-gray-500 hover:bg-gray-200;
+}
