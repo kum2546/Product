@@ -8,10 +8,10 @@ const ProductPage = () => {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   useEffect(() => {
-    const fetchProducts = async () =>{
-      try{
+    const fetchProducts = async () => {
+      try {
         const response = await fetch(
-         "https://6795f905bedc5d43a6c3e8d8.mockapi.io/products"
+          "https://6795f905bedc5d43a6c3e8d8.mockapi.io/products"
         );
         const data = await response.json();
         setProducts(data);
@@ -33,10 +33,10 @@ const ProductPage = () => {
           },
           body: JSON.stringify(product),
         }
-       );
-       const newProduct = await response.json();
-       setProducts((prevProducts) => [...prevProducts, newProduct]);
-       toast.success("Product added successfully!", { autoClose: 2000 });
+      );
+      const newProduct = await response.json();
+      setProducts((prevProducts) => [...prevProducts, newProduct]);
+      toast.success("Product added successfully!", { autoClose: 2000 });
     } catch (error) {
       toast.error("Failed to add Product!", { autoClose: 2000 });
     }
@@ -54,10 +54,10 @@ const ProductPage = () => {
           },
           body: JSON.stringify(updateProduct),
         }
-       );
-       const updated = await response.json();
-       setProducts((prevProducts) =>
-        prevProducts.map((p, i) => (i === id ? update : p))
+      );
+      const updated = await response.json();
+      setProducts((prevProducts) =>
+        prevProducts.map((p, i) => (i === id ? updated : p))
       );
       toast.info("Product updated successfully!", { autoClose: 2000 });
     } catch (error) {
