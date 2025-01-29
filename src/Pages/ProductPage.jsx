@@ -69,7 +69,7 @@ const ProductPage = () => {
     try {
       const { pro_id } = products[id];
       await fetch(
-        `https://66bed4f942533c4031442a3e.mockapi.io/products/${pro_id}`,
+        `https://6795f905bedc5d43a6c3e8d8.mockapi.io/products/${pro_id}`,
         {
           method: "DELETE",
         }
