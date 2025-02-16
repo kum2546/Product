@@ -31,6 +31,16 @@ const Navbar = () => {
             Product
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/Employee" className={activeLink}>
+            Employee
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/Employee" className={activeLink}>
+            Employee
+          </NavLink>
+        </li>
       </ul>
     </header>
   );
